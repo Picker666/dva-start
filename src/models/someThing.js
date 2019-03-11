@@ -1,5 +1,5 @@
-export const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-
+// export const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+import { delay } from 'dva/saga';
 export default {
     namespace: 'someThing',
     state: {
