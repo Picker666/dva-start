@@ -19,3 +19,4 @@ app.router(router);
 
 // 5. Start
 app.start('#root');
+// https://dvajs.com/guide/getting-started.html#%E5%AE%89%E8%A3%85-dva-cli
