@@ -22,6 +22,22 @@ class SomeThing extends Component {
         });
     }
 
+    handleAsyncIncrease = () => {
+        const { dispatch, num } = this.props;
+        dispatch({
+            type: 'someThing/asyncIncrease',
+            num: num + 1
+        });
+    }
+
+    handleAsyncDecrease = () => {
+        const { dispatch, num } = this.props;
+        dispatch({
+            type: 'someThing/asyncDecrease',
+            num: num - 1
+        });
+    }
+
     render () {
         const { num } = this.props;
         return <div className={styles.someThing}>
@@ -29,6 +45,8 @@ class SomeThing extends Component {
             <p>
                 <button onClick={this.handleIncrease}>加加</button>
                 <button onClick={this.handleDecrease}>减减</button>
+                <button onClick={this.handleAsyncIncrease}>异步加加</button>
+                <button onClick={this.handleAsyncDecrease}>异步减减</button>
             </p>
             this is some thing.
         </div>

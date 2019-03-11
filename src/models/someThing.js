@@ -1,3 +1,5 @@
+export const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 export default {
     namespace: 'someThing',
     state: {
@@ -13,8 +15,13 @@ export default {
 
     },
     effects: {
-        *fetch({ payload }, { call, put }) {  // eslint-disable-line
-            yield put({ type: 'save' });
+        *asyncIncrease(action, { call, put }) {  // eslint-disable-line
+            yield call(delay, 1000)
+            yield put({ type: 'increase', num: action.num });
         },
+        *asyncDecrease (action, { call, put }) {
+            yield call(delay, 1000)
+            yield put({ type: 'decrease', num: action.num });
+        }
     },
 }
