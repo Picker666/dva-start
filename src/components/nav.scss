@@ -1,0 +1,23 @@
+
+.container {
+    
+    .navGroup {
+        text-align: center;
+        background-color: orange;
+        padding: 12px 0;
+        margin-bottom: 24px;
+
+        .nav {
+            text-decoration: none;
+            margin: 0 15px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    
+        .active {
+            border-bottom: solid 2px blue;
+            color: blue;
+        }
+    }
+}
